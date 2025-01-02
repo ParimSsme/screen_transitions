@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
-class CrossFadeRoute extends PageRouteBuilder {
+class CrossFade extends PageRouteBuilder {
   final Widget page;
 
-  CrossFadeRoute({required this.page})
+  CrossFade({required this.page})
       : super(
     pageBuilder: (context, animation, secondaryAnimation) => page,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {

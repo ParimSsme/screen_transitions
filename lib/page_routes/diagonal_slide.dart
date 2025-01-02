@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
-class DiagonalSlideRoute extends PageRouteBuilder {
+class DiagonalSlide extends PageRouteBuilder {
   final Widget page;
 
-  DiagonalSlideRoute({required this.page})
+  DiagonalSlide({required this.page})
       : super(
     pageBuilder: (context, animation, secondaryAnimation) => page,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
