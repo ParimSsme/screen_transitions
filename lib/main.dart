@@ -7,6 +7,7 @@ import 'package:screen_transitions/page_routes/cross_fade.dart';
 import 'package:screen_transitions/page_routes/diagonal_slide.dart';
 import 'package:screen_transitions/page_routes/elastic.dart';
 import 'package:screen_transitions/page_routes/fade.dart';
+import 'package:screen_transitions/page_routes/flip_3d_horizontal.dart';
 import 'package:screen_transitions/page_routes/flip_3d_vertical.dart';
 import 'package:screen_transitions/page_routes/flip_horizontal.dart';
 import 'package:screen_transitions/page_routes/flip_vertical.dart';
@@ -14,6 +15,8 @@ import 'package:screen_transitions/page_routes/fragmented_explode.dart';
 import 'package:screen_transitions/page_routes/gaussian_blur.dart';
 import 'package:screen_transitions/page_routes/icon_morph.dart';
 import 'package:screen_transitions/page_routes/parallax_zoom.dart';
+import 'package:screen_transitions/page_routes/path_morph.dart';
+import 'package:screen_transitions/page_routes/ripple.dart';
 import 'package:screen_transitions/page_routes/rotate.dart';
 import 'package:screen_transitions/page_routes/scale_rotate.dart';
 import 'package:screen_transitions/page_routes/shape_morph.dart';
@@ -23,6 +26,7 @@ import 'package:screen_transitions/page_routes/slide_from_left.dart';
 import 'package:screen_transitions/page_routes/slide_from_right.dart';
 import 'package:screen_transitions/page_routes/slide_from_top.dart';
 import 'package:screen_transitions/page_routes/slide_scale_fade.dart';
+import 'package:screen_transitions/page_routes/spring.dart';
 import 'package:screen_transitions/page_routes/zoom_in.dart';
 import 'package:screen_transitions/page_routes/zoom_out.dart';
 
@@ -127,6 +131,19 @@ class HomeScreen extends StatelessWidget {
     },{
       'name': 'Flip 3D Vertical Transition',
       'route': (page) => Flip3dVertical(page: page)
+    },{
+      'name': 'Flip 3D Horizontal Transition',
+      'route': (page) => Flip3dHorizontal(page: page)
+    },{
+      'name': 'Path Morph Transition',
+      'route': (page) => PathMorph(page: page)
+    },{
+      'name': 'Spring Transition',
+      'route': (page) => Spring(page: page)
+    },
+    {
+      'name': 'Ripple Transition',
+      'route': (page) => Ripple(page: page)
     },
   ];
 
