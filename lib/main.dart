@@ -3,10 +3,16 @@ import 'package:screen_transitions/page_routes/center_zoom.dart';
 import 'package:screen_transitions/page_routes/cross_fade.dart';
 import 'package:screen_transitions/page_routes/diagonal_slide.dart';
 import 'package:screen_transitions/page_routes/fade.dart';
+import 'package:screen_transitions/page_routes/flip_horizontal.dart';
+import 'package:screen_transitions/page_routes/flip_vertical.dart';
+import 'package:screen_transitions/page_routes/rotate.dart';
+import 'package:screen_transitions/page_routes/scale_rotate.dart';
+import 'package:screen_transitions/page_routes/slide_fade.dart';
 import 'package:screen_transitions/page_routes/slide_from_bottom.dart';
 import 'package:screen_transitions/page_routes/slide_from_left.dart';
 import 'package:screen_transitions/page_routes/slide_from_right.dart';
 import 'package:screen_transitions/page_routes/slide_from_top.dart';
+import 'package:screen_transitions/page_routes/slide_scale_fade.dart';
 import 'package:screen_transitions/page_routes/zoom_in.dart';
 import 'package:screen_transitions/page_routes/zoom_out.dart';
 
@@ -42,15 +48,17 @@ class HomeScreen extends StatelessWidget {
       {'name': 'Zoom in Transition', 'route': (page) => ZoomIn(page: page)},
       {'name': 'Zoom out Transition', 'route': (page) => ZoomOut(page: page)},
       {'name': 'Center Zoom Transition', 'route': (page) => CenterZoom(page: page)},
-      {'name': 'Scale Transition', 'route': (page) => ScaleRoute(page: page)},
-      {'name': 'Rotate Transition', 'route': (page) => RotateRoute(page: page)},
-      {'name': 'Flip Transition', 'route': (page) => FlipRoute(page: page)},
-      {'name': 'Slide & Fade', 'route': (page) => SlideFadeRoute(page: page)},
-      {'name': 'Custom Curve', 'route': (page) => CustomCurveRoute(page: page)},
-      {'name': 'Circular Reveal', 'route': (page) => CircularRevealRoute(page: page)},
-      {'name': 'Flip 3D', 'route': (page) => Flip3DRoute(page: page)},
-      {'name': 'Elastic Transition', 'route': (page) => ElasticRoute(page: page)},
-      {'name': 'Bounce Transition', 'route': (page) => BounceRoute(page: page)},
+      {'name': 'Rotate Transition', 'route': (page) => Rotate(page: page)},
+      {'name': 'Flip Horizontal Transition', 'route': (page) => FlipHorizontal(page: page)},
+      {'name': 'Flip Vertical Transition', 'route': (page) => FlipVertical(page: page)},
+      {'name': 'Slide Fade Transition', 'route': (page) => SlideFade(page: page)},
+      {'name': 'Scale Rotate Transition', 'route': (page) => ScaleRotate(page: page)},
+      {'name': 'Slide Scale Fade Transition', 'route': (page) => SlideScaleFade(page: page)},
+      // {'name': 'Custom Curve', 'route': (page) => CustomCurveRoute(page: page)},
+      // {'name': 'Circular Reveal', 'route': (page) => CircularRevealRoute(page: page)},
+      // {'name': 'Flip 3D', 'route': (page) => Flip3DRoute(page: page)},
+      // {'name': 'Elastic Transition', 'route': (page) => ElasticRoute(page: page)},
+      // {'name': 'Bounce Transition', 'route': (page) => BounceRoute(page: page)},
     ];
 
     return Scaffold(
@@ -93,76 +101,6 @@ class DetailsScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-
-
-class ScaleRoute extends PageRouteBuilder {
-  final Widget page;
-
-  ScaleRoute({required this.page})
-      : super(
-    pageBuilder: (context, animation, secondaryAnimation) => page,
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      final scaleAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(animation);
-      return ScaleTransition(scale: scaleAnimation, child: child);
-    },
-  );
-}
-
-
-class RotateRoute extends PageRouteBuilder {
-  final Widget page;
-
-  RotateRoute({required this.page})
-      : super(
-    pageBuilder: (context, animation, secondaryAnimation) => page,
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      final rotateAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(animation);
-      return RotationTransition(turns: rotateAnimation, child: child);
-    },
-  );
-}
-
-class FlipRoute extends PageRouteBuilder {
-  final Widget page;
-
-  FlipRoute({required this.page})
-      : super(
-    pageBuilder: (context, animation, secondaryAnimation) => page,
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      final rotateY = Tween(begin: 0.0, end: 1.0).animate(animation);
-      return AnimatedBuilder(
-        animation: rotateY,
-        builder: (context, child) {
-          return Transform(
-            transform: Matrix4.rotationY(rotateY.value),
-            alignment: Alignment.center,
-            child: child,
-          );
-        },
-        child: child,
-      );
-    },
-  );
-}
-
-class SlideFadeRoute extends PageRouteBuilder {
-  final Widget page;
-
-  SlideFadeRoute({required this.page})
-      : super(
-    pageBuilder: (context, animation, secondaryAnimation) => page,
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      final offsetAnimation = Tween<Offset>(begin: Offset(0, 1), end: Offset.zero)
-          .animate(animation);
-      final fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(animation);
-      return SlideTransition(
-        position: offsetAnimation,
-        child: FadeTransition(opacity: fadeAnimation, child: child),
-      );
-    },
-  );
 }
 
 class CustomCurveRoute extends PageRouteBuilder {
