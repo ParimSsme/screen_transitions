@@ -1,11 +1,15 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:screen_transitions/page_routes/accordion.dart';
 import 'package:screen_transitions/page_routes/blur_to_clear.dart';
 import 'package:screen_transitions/page_routes/bounce_with_rotation.dart';
 import 'package:screen_transitions/page_routes/center_zoom.dart';
+import 'package:screen_transitions/page_routes/checker_board.dart';
 import 'package:screen_transitions/page_routes/circular_reveal.dart';
 import 'package:screen_transitions/page_routes/cross_fade.dart';
 import 'package:screen_transitions/page_routes/curl_page.dart';
+import 'package:screen_transitions/page_routes/curved_reveal.dart';
 import 'package:screen_transitions/page_routes/diagonal_slide.dart';
 import 'package:screen_transitions/page_routes/diagonal_wipe.dart';
 import 'package:screen_transitions/page_routes/elastic.dart';
@@ -158,8 +162,22 @@ class HomeScreen extends StatelessWidget {
     {'name': 'Curl Transition', 'route': (page) => CurlPage(page: page)},
     {'name': 'Accordion Transition', 'route': (page) => Accordion(page: page)},
     {'name': 'Spiral Transition', 'route': (page) => Spiral(page: page)},
-    {'name': 'Diagonal Wipe Transition', 'route': (page) => DiagonalWipe(page: page)},
-    {'name': 'Sliding Panels Transition', 'route': (page) => SlidingPanels(page: page)},
+    {
+      'name': 'Diagonal Wipe Transition',
+      'route': (page) => DiagonalWipe(page: page)
+    },
+    {
+      'name': 'Sliding Panels Transition',
+      'route': (page) => SlidingPanels(page: page)
+    },
+    {
+      'name': 'Curved Reveal Transition',
+      'route': (page) => CurvedReveal(page: page)
+    },
+    {
+      'name': 'Checker Board Transition',
+      'route': (page) => CheckerBoard(page: page)
+    },
   ];
 
   @override
