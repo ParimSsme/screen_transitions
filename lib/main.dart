@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:screen_transitions/page_routes/accordion.dart';
 import 'package:screen_transitions/page_routes/blur_to_clear.dart';
 import 'package:screen_transitions/page_routes/bounce_with_rotation.dart';
 import 'package:screen_transitions/page_routes/center_zoom.dart';
 import 'package:screen_transitions/page_routes/circular_reveal.dart';
 import 'package:screen_transitions/page_routes/cross_fade.dart';
+import 'package:screen_transitions/page_routes/curl_page.dart';
 import 'package:screen_transitions/page_routes/diagonal_slide.dart';
 import 'package:screen_transitions/page_routes/elastic.dart';
 import 'package:screen_transitions/page_routes/fade.dart';
@@ -14,6 +16,8 @@ import 'package:screen_transitions/page_routes/flip_vertical.dart';
 import 'package:screen_transitions/page_routes/fragmented_explode.dart';
 import 'package:screen_transitions/page_routes/gaussian_blur.dart';
 import 'package:screen_transitions/page_routes/icon_morph.dart';
+import 'package:screen_transitions/page_routes/page_flip_1.dart';
+import 'package:screen_transitions/page_routes/page_flip_2.dart';
 import 'package:screen_transitions/page_routes/parallax_zoom.dart';
 import 'package:screen_transitions/page_routes/path_morph.dart';
 import 'package:screen_transitions/page_routes/ripple.dart';
@@ -144,6 +148,19 @@ class HomeScreen extends StatelessWidget {
     {
       'name': 'Ripple Transition',
       'route': (page) => Ripple(page: page)
+    },
+    {
+      'name': 'Page Flip 1 Transition',
+      'route': (page) => PageFlip1(page: page)
+    },{
+      'name': 'Page Flip 2 Transition',
+      'route': (page) => PageFlip2(page: page)
+    },{
+      'name': 'Curl Transition',
+      'route': (page) => CurlPage(page: page)
+    },{
+      'name': 'Accordion Transition',
+      'route': (page) => Accordion(page: page)
     },
   ];
 
