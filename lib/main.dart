@@ -1,8 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:screen_transitions/page_routes/accordion.dart';
 import 'package:screen_transitions/page_routes/blur_to_clear.dart';
+import 'package:screen_transitions/page_routes/bounce_ball.dart';
 import 'package:screen_transitions/page_routes/bounce_with_rotation.dart';
 import 'package:screen_transitions/page_routes/center_zoom.dart';
 import 'package:screen_transitions/page_routes/checker_board.dart';
@@ -177,6 +176,9 @@ class HomeScreen extends StatelessWidget {
     {
       'name': 'Checker Board Transition',
       'route': (page) => CheckerBoard(page: page)
+    },{
+      'name': 'Bounce Ball Transition',
+      'route': (page) => BounceBall(page: page)
     },
   ];
 
