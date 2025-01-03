@@ -55,8 +55,15 @@ class TransitionDemoApp extends StatelessWidget {
         cardTheme: const CardTheme(color: Colors.black45),
         appBarTheme: const AppBarTheme(
           centerTitle: true,
+          backgroundColor: Colors.grey,
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
           titleTextStyle: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 22),
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
       ),
       home: HomeScreen(),
@@ -176,7 +183,8 @@ class HomeScreen extends StatelessWidget {
     {
       'name': 'Checker Board Transition',
       'route': (page) => CheckerBoard(page: page)
-    },{
+    },
+    {
       'name': 'Bounce Ball Transition',
       'route': (page) => BounceBall(page: page)
     },
@@ -242,14 +250,17 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade600,
+      backgroundColor: Colors.grey.shade700,
       appBar: AppBar(
         title: Text(name),
       ),
       body: Center(
         child: Text(
           'This is the $name screen!',
-          style: TextStyle(fontSize: 24),
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.white,
+          ),
           textAlign: TextAlign.center,
         ),
       ),
