@@ -13,9 +13,7 @@ class Ripple1 extends PageRouteBuilder {
           Positioned.fill(
             child: ClipPath(
               clipper: RippleClipper(animation.value),
-              child: Container(
-                color: Theme.of(context).primaryColor,
-              ),
+              child: child,
             ),
           ),
         ],
