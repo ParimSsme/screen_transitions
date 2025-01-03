@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Ripple extends PageRouteBuilder {
+class Ripple1 extends PageRouteBuilder {
   final Widget page;
 
-  Ripple({required this.page})
+  Ripple1({required this.page})
       : super(
     pageBuilder: (context, animation, secondaryAnimation) => page,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {

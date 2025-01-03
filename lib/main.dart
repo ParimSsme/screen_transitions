@@ -7,6 +7,7 @@ import 'package:screen_transitions/page_routes/circular_reveal.dart';
 import 'package:screen_transitions/page_routes/cross_fade.dart';
 import 'package:screen_transitions/page_routes/curl_page.dart';
 import 'package:screen_transitions/page_routes/diagonal_slide.dart';
+import 'package:screen_transitions/page_routes/diagonal_wipe.dart';
 import 'package:screen_transitions/page_routes/elastic.dart';
 import 'package:screen_transitions/page_routes/fade.dart';
 import 'package:screen_transitions/page_routes/flip_3d_horizontal.dart';
@@ -20,7 +21,8 @@ import 'package:screen_transitions/page_routes/page_flip_1.dart';
 import 'package:screen_transitions/page_routes/page_flip_2.dart';
 import 'package:screen_transitions/page_routes/parallax_zoom.dart';
 import 'package:screen_transitions/page_routes/path_morph.dart';
-import 'package:screen_transitions/page_routes/ripple.dart';
+import 'package:screen_transitions/page_routes/ripple1.dart';
+import 'package:screen_transitions/page_routes/ripple2.dart';
 import 'package:screen_transitions/page_routes/rotate.dart';
 import 'package:screen_transitions/page_routes/scale_rotate.dart';
 import 'package:screen_transitions/page_routes/shape_morph.dart';
@@ -30,6 +32,8 @@ import 'package:screen_transitions/page_routes/slide_from_left.dart';
 import 'package:screen_transitions/page_routes/slide_from_right.dart';
 import 'package:screen_transitions/page_routes/slide_from_top.dart';
 import 'package:screen_transitions/page_routes/slide_scale_fade.dart';
+import 'package:screen_transitions/page_routes/sliding_panels.dart';
+import 'package:screen_transitions/page_routes/spiral.dart';
 import 'package:screen_transitions/page_routes/spring.dart';
 import 'package:screen_transitions/page_routes/zoom_in.dart';
 import 'package:screen_transitions/page_routes/zoom_out.dart';
@@ -63,10 +67,7 @@ class HomeScreen extends StatelessWidget {
   final transitions = [
     {'name': 'Fade Transition', 'route': (page) => Fade(page: page)},
     {'name': 'Slide From Left', 'route': (page) => SlideFromLeft(page: page)},
-    {
-      'name': 'Slide From Right',
-      'route': (page) => SlideFromRight(page: page)
-    },
+    {'name': 'Slide From Right', 'route': (page) => SlideFromRight(page: page)},
     {
       'name': 'Slide From Bottom',
       'route': (page) => SlideFromBottom(page: page)
@@ -92,10 +93,7 @@ class HomeScreen extends StatelessWidget {
       'name': 'Flip Vertical Transition',
       'route': (page) => FlipVertical(page: page)
     },
-    {
-      'name': 'Slide Fade Transition',
-      'route': (page) => SlideFade(page: page)
-    },
+    {'name': 'Slide Fade Transition', 'route': (page) => SlideFade(page: page)},
     {
       'name': 'Scale Rotate Transition',
       'route': (page) => ScaleRotate(page: page)
@@ -120,55 +118,55 @@ class HomeScreen extends StatelessWidget {
     {
       'name': 'Gaussian Blur Transition',
       'route': (page) => GaussianBlur(page: page)
-    },{
-      'name': 'Blur to Clear Transition',
-      'route': (page) => BlurToClear(page: page)
-    },{
-      'name': 'Parallax Zoom Transition',
-      'route': (page) => ParallaxZoom(page: page)
-    },{
-      'name': 'Circular Reveal Transition',
-      'route': (page) => CircularReveal(page: page)
-    },{
-      'name': 'Bounce with Rotation Transition',
-      'route': (page) => BounceWithRotation(page: page)
-    },{
-      'name': 'Flip 3D Vertical Transition',
-      'route': (page) => Flip3dVertical(page: page)
-    },{
-      'name': 'Flip 3D Horizontal Transition',
-      'route': (page) => Flip3dHorizontal(page: page)
-    },{
-      'name': 'Path Morph Transition',
-      'route': (page) => PathMorph(page: page)
-    },{
-      'name': 'Spring Transition',
-      'route': (page) => Spring(page: page)
     },
     {
-      'name': 'Ripple Transition',
-      'route': (page) => Ripple(page: page)
+      'name': 'Blur to Clear Transition',
+      'route': (page) => BlurToClear(page: page)
     },
+    {
+      'name': 'Parallax Zoom Transition',
+      'route': (page) => ParallaxZoom(page: page)
+    },
+    {
+      'name': 'Circular Reveal Transition',
+      'route': (page) => CircularReveal(page: page)
+    },
+    {
+      'name': 'Bounce with Rotation Transition',
+      'route': (page) => BounceWithRotation(page: page)
+    },
+    {
+      'name': 'Flip 3D Vertical Transition',
+      'route': (page) => Flip3dVertical(page: page)
+    },
+    {
+      'name': 'Flip 3D Horizontal Transition',
+      'route': (page) => Flip3dHorizontal(page: page)
+    },
+    {'name': 'Path Morph Transition', 'route': (page) => PathMorph(page: page)},
+    {'name': 'Spring Transition', 'route': (page) => Spring(page: page)},
+    {'name': 'Ripple 1 Transition', 'route': (page) => Ripple1(page: page)},
+    {'name': 'Ripple 2 Transition', 'route': (page) => Ripple2(page: page)},
     {
       'name': 'Page Flip 1 Transition',
       'route': (page) => PageFlip1(page: page)
-    },{
+    },
+    {
       'name': 'Page Flip 2 Transition',
       'route': (page) => PageFlip2(page: page)
-    },{
-      'name': 'Curl Transition',
-      'route': (page) => CurlPage(page: page)
-    },{
-      'name': 'Accordion Transition',
-      'route': (page) => Accordion(page: page)
     },
+    {'name': 'Curl Transition', 'route': (page) => CurlPage(page: page)},
+    {'name': 'Accordion Transition', 'route': (page) => Accordion(page: page)},
+    {'name': 'Spiral Transition', 'route': (page) => Spiral(page: page)},
+    {'name': 'Diagonal Wipe Transition', 'route': (page) => DiagonalWipe(page: page)},
+    {'name': 'Sliding Panels Transition', 'route': (page) => SlidingPanels(page: page)},
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(title: Text('${transitions.length} Transition Animations')),
+      appBar:
+          AppBar(title: Text('${transitions.length} Transition Animations')),
       body: ListView.separated(
         itemCount: transitions.length,
         itemBuilder: (context, index) {
@@ -178,7 +176,8 @@ class HomeScreen extends StatelessWidget {
               if (context.mounted) {
                 Navigator.push(
                   context,
-                  (transition['route'] as Function)(DetailsScreen(name: transition['name'] as String)),
+                  (transition['route'] as Function)(
+                      DetailsScreen(name: transition['name'] as String)),
                 );
               }
             },
@@ -207,8 +206,9 @@ class _ListItem extends StatelessWidget {
         name,
         textAlign: TextAlign.center,
         style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,),
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
